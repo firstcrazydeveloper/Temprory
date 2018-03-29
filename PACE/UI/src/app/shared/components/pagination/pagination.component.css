@@ -1,0 +1,9 @@
+.active {
+  background-color: #69be28;
+}
+
+.numbers button {
+  height: 40px;
+  width: 40px;
+  padding: 12px;
+}

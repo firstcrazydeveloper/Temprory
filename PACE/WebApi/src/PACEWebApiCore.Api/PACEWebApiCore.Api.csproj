@@ -1,0 +1,42 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Repository\**" />
+    <Compile Remove="wwwroot\**" />
+    <Content Remove="Repository\**" />
+    <Content Remove="wwwroot\**" />
+    <EmbeddedResource Remove="Repository\**" />
+    <EmbeddedResource Remove="wwwroot\**" />
+    <None Remove="Repository\**" />
+    <None Remove="wwwroot\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Autofac" Version="4.6.2" />
+    <PackageReference Include="Autofac.Extensions.DependencyInjection" Version="4.2.0" />
+    <PackageReference Include="Dapper" Version="1.50.4" />
+    <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.3" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication" Version="2.0.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="2.0.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Formatters.Json" Version="2.0.1" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.0.3" />
+    <PackageReference Include="Serilog" Version="2.6.0" />
+    <PackageReference Include="Serilog.Extensions.logging" Version="2.0.2" />
+    <PackageReference Include="Serilog.Sinks.RollingFile" Version="3.3.0" />
+    <PackageReference Include="Serilog.Sinks.Seq" Version="4.0.0" />
+    <PackageReference Include="Serilog.Sinks.Splunk" Version="2.5.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\GenericRepository.Interfaces\GenericRepository.Interfaces.csproj" />
+    <ProjectReference Include="..\GenericRepository\GenericRepository.csproj" />
+    <ProjectReference Include="..\PACEWebApiCore.Entities\PACEWebApiCore.Entities.csproj" />
+    <ProjectReference Include="..\PACEWebApiCore.Utilities\PACEWebApiCore.Utilities.csproj" />
+    <ProjectReference Include="..\ReferenceDataCore\ReferenceDataCore.csproj" />
+  </ItemGroup>
+
+</Project>

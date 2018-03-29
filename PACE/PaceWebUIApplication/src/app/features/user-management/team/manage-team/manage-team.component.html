@@ -1,0 +1,50 @@
+<app-nav-menu></app-nav-menu>
+<div class="container" style="padding: 15px">
+  <div class="pull-left" style="color: #818A8F; padding-top: 5px;">Total {{this.totalCount}} Records</div>
+
+</div>
+
+<div class="container">
+  <div class="contentTable">
+    <table class=" ">
+      <thead>
+        <tr>
+          <th>Team Name
+            <a href="javascript:void(0);" class="colSortBtn"></a>
+          </th>
+          <th>Liaison Username
+            <a href="javascript:void(0);" class="colSortBtn"></a>
+          </th>
+          <th>Liaison Team
+            <a href="javascript:void(0);" class="colSortBtn"></a>
+          </th>
+          <th> Last Action Date
+            <a href="javascript:void(0);" class="colSortBtn"></a>
+          </th>
+          <th width="90">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr *ngFor="let item of this.teamData">
+              <td>{{item.name}}</td>
+              <td>null</td>
+              <td>null</td>
+              <td>{{item.modified | date }}</td>
+              <td class="text-center">
+                <div class="rowNavIcon" (click)="displayToolTip($event);">
+                  <a href="javascript:void(0);">&bull;&bull;&bull;</a>
+                  <div class="rowNavBox">
+                    <a (click)="showDetails(item.id);" class="editLink"> </a>
+                    <a (click)="showDetails(item.id);" class="searchLink"> </a>
+                    <a (click)="deleteRow(item.id,item.name);" class="deleteLink"> </a>
+                  </div>
+                </div>
+              </td>
+            </tr>
+      </tbody>
+    </table>
+  </div>
+  <!--//contentTable-->
+</div>
+<app-pagination *ngIf="this.totalCount>25" (goPage)="this.goToPage($event)" (goNext)="onNext()" (goPrev)="onPrev()" [pagesToShow]="3" [page]="this.pageIndex" [perPage]="25"
+  [count]="this.totalCount"></app-pagination>

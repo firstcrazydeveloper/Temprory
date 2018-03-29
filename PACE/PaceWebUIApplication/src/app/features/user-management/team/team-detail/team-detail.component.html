@@ -1,0 +1,133 @@
+<app-nav-menu></app-nav-menu>
+<form (ngSubmit)="onSubmit(f)" #f="ngForm" novalidate>
+<div class="container clearfix" style="padding-top:20px;">	
+	<div class="contractFormTabs">
+		<!-- Nav tabs -->
+		<ul class="nav nav-tabs" role="tablist">
+			<li role="presentation" class="active"><a href="#tab1" aria-controls="tab1" role="tab" data-toggle="tab">Details</a></li>
+			<!-- <li role="presentation"><a href="#tab2" aria-controls="tab2" role="tab" data-toggle="tab">Templates</a></li> -->
+		</ul>
+
+		<!-- Tab panes -->
+		<div class="tab-content">
+			
+			<div role="tabpanel" class="tab-pane active" id="tab1">
+				<div class="pageHeading">
+					Details
+				</div><!--//pageHeading-->
+				
+				<div class="row">
+					<div class="col-md-4">
+						<div class="form-group">
+							<div class="row">
+								<div class="col-sm-4 textlabel">Team Name</div><!--//col-sm-4-->
+								<div class="col-sm-8">
+										<input type="text" name="name" [(ngModel)]="teamName"  class="form-control" disabled="{{disabled}}" required/>
+								</div><!--//col-sm-8-->
+							</div><!--//row-->
+						</div><!--//form-group-->
+					</div><!--//col-md-4-->
+					<div class="col-md-4">
+						<div class="form-group">
+							<div class="row">
+								<div class="col-sm-4 textlabel">Status</div><!--//col-sm-4-->
+								<div class="col-sm-8">
+									<select class="form-control" [(ngModel)]="status" name="status"   disabled="{{disabled}}">
+										<option value="0">Active</option>
+										<option value="8">InActive</option>
+									</select>
+
+								</div><!--//col-sm-8-->
+							</div><!--//row-->
+						</div><!--//form-group-->
+					</div><!--//col-md-4-->
+				</div><!--//row-->
+				
+				<div class="pageHeading">
+					Liaison
+				</div><!--//pageHeading-->
+				
+				<div class="row">					
+					<div class="col-md-4">
+						<div class="form-group">
+							<div class="row">
+								<div class="col-sm-4 textlabel">Username</div><!--//col-sm-4-->
+								<div class="col-sm-8">
+									<a href="javascript:void(0);" class="addFldBtn"><span class="glyphicon glyphicon-search"></span></a>
+									<input type="text" name="userName" [(ngModel)]="userName"  class="form-control" disabled="{{disabled}}" />
+								
+								</div><!--//col-sm-8-->
+							</div><!--//row-->
+						</div><!--//form-group-->
+					</div><!--//col-md-4-->
+					
+					<div class="col-md-4">
+						<div class="form-group">
+							<div class="row">
+								<div class="col-sm-4 textlabel">Team</div><!--//col-sm-4-->
+								<div class="col-sm-8">
+									<!-- <input type="text" class="form-control" value="" disabled> -->
+								</div><!--//col-sm-8-->
+							</div><!--//row-->
+						</div><!--//form-group-->
+					</div><!--//col-md-4-->
+				</div><!--//row-->
+				
+			</div><!--//tab1-->
+			
+			
+			<!-- <div role="tabpanel" class="tab-pane" id="tab2">						
+				<div class="pageHeading">
+					Templates
+				</div><!--//pageHeading-->
+				
+				<div class="row">					
+					<div class="col-md-4">
+						<div class="form-group">
+							<div class="row">
+								<div class="col-sm-8">
+									<!-- <input type="text" class="form-control" value=""> -->
+								</div><!--//col-sm-4-->
+								<div class="col-sm-4">
+									<a href="javascript:void(0);" class="addFldBtn"><span class="glyphicon glyphicon-plus"></span></a>
+								</div><!--//col-sm-4-->
+							</div><!--//row-->
+						</div><!--//form-group-->
+					</div><!--//col-md-4-->
+				</div><!--//row-->
+				
+				<!-- <div class="contentTable" style="margin-bottom:15px; padding-bottom:0;">
+					<table class=" ">
+						<thead>
+						<tr>
+							<th>Template Name <a href="javascript:void(0);" class="colSortBtn"></a></th>
+							<th class="text-center" width="150">Useage <a href="javascript:void(0);" class="colSortBtn"></a></th>
+							<th class="text-center" width="150">Version <a href="javascript:void(0);" class="colSortBtn"></a></th>
+							<th class="text-center" width="150">Status <a href="javascript:void(0);" class="colSortBtn"></a></th>
+							<th class="text-center" width="66"></th>
+						</tr>
+						</thead>
+						<tbody>
+						
+						</tbody>
+					</table>
+				</div> -->
+				<!-- //contentTable -->
+				
+				
+			<!-- </div> -->
+			<!--//tab2-->
+			
+			
+		</div><!--//tab-content-->
+
+	</div><!--//contractFormTabs-->
+	
+	
+	<div class="clearfix text-right contractBtns">
+			<button *ngIf="!disabled" type="submit" class="btn btn-primary" [disabled]="!f.valid">Save</button>
+			<input type="button" class="btn btn-primary" value="Cancel" (click)="onCancelClicked()">
+	</div>
+	
+</div>
+</form>

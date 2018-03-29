@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="EntitySource.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\GenericRepository.Interfaces\GenericRepository.Interfaces.csproj" />
+    <ProjectReference Include="..\PACEWebApiCore.Utilities\PACEWebApiCore.Utilities.csproj" />
+    <ProjectReference Include="..\SqlCodeGenerator\SqlCodeGenerator.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,39 @@
+﻿.searchboxwrapper {
+    position: relative;
+    width: 212px;
+}
+input[type=search]::-webkit-search-cancel-button {
+    -webkit-appearance: searchfield-cancel-button;
+}
+
+.searchbox {
+    border: 1px solid #dadada;
+    outline: none;
+    font: 11px 'Montserrat', sans-serif;
+    color: #777;
+    width: 182px;
+    height: 26px;
+    background: #fff;
+    padding-left: 10px;
+}
+
+.searchsubmit {
+    font-family: 'FontAwesome';
+    width: 24px;
+    padding: 2px;
+    height: 29px;
+    border: 1px solid #dadada;
+    font-size: 24px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: transparent;
+    border: none;
+    color: #357ebd;
+    cursor: hand;
+    cursor: pointer;
+}
+
+    .searchsubmit:after {
+        content: '\f00d';
+    }

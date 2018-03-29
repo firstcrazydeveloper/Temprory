@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Autofac" Version="4.6.2" />
+    <PackageReference Include="Dapper" Version="1.50.4" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\GenericRepository.Interfaces\GenericRepository.Interfaces.csproj" />
+    <ProjectReference Include="..\PACEWebApiCore.Utilities\PACEWebApiCore.Utilities.csproj" />
+    <ProjectReference Include="..\SqlCodeGenerator\SqlCodeGenerator.csproj" />
+  </ItemGroup>
+
+
+</Project>

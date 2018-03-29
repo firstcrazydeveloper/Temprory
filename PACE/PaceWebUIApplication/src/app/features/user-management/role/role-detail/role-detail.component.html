@@ -1,0 +1,46 @@
+<app-nav-menu></app-nav-menu>
+<form (ngSubmit)="onSubmit(f)" #f="ngForm" novalidate>
+	<div class="container clearfix">
+		<div class="pageHeading_new row">
+			<span>Details</span>
+		</div>
+		<!--//pageHeading-->
+		<div class="page_body row">
+			<div class="pageHeading">
+				Details
+			</div>
+			<div class="row form-group">
+				<div class="col-sm-1 textlabel">Role Name</div>
+				<div class="col-sm-3" >
+					<input type="text" name="name" [(ngModel)]="roleName"  class="form-control" disabled="{{disabled}}" required/>
+				</div>
+			</div>
+			<div class="pageHeading">
+				Access
+			</div>
+			<div class="contentTable" style="margin-bottom:15px; padding-bottom:0;">
+				<table class=" ">
+					<thead>
+						<tr>
+							<th width="80%">Action</th>
+							<th>Has Permission</th>
+						</tr>
+					</thead>
+					<tbody>
+							<tr *ngFor="let action of this.roleActions">
+									<td>{{action.description}}</td>
+									<td><input type="checkbox" [checked]="permissionId.indexOf(action.id) >= 0" [attr.disabled]="disabled?'':null" name="chkPermissions" (change)="onChecked($event)" value="{{action.id}}" ngModel required></td>
+								</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	
+		<div class="row">
+			<div class="col-sm-12 text-right margin_top_10">
+				<button *ngIf="!disabled" type="submit" class="btn btn-primary" [disabled]="!f.valid">Save</button>
+				<input type="button" class="btn btn-primary" value="Cancel" (click)="onCancelClicked()">
+			</div>
+		</div>
+	</div>
+</form>

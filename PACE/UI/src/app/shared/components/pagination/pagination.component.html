@@ -1,0 +1,7 @@
+<div class="pull-right" *ngIf="count > 0">
+  <div class="numbers">
+    <button  (click)="onPrev()" [disabled]="page === 1 || loading" [ngClass]="{ 'disabled': page === 1 || loading }"><<</button>
+    <button *ngFor="let pageNum of getPages()" (click)="onPage(pageNum)" [ngClass]="{'active': pageNum === page, 'disabled': loading}">{{ pageNum }}</button>
+    <button  (click)="onNext(true)" [disabled]="lastPage() || loading" [ngClass]="{ 'disabled': lastPage() || loading }">>></button>
+  </div>
+</div>

@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CBRE GRID | Login</title>
+<link rel="stylesheet" type="text/css" href="../../assets/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="../../assets/css/log_style.css" >
+<link rel="stylesheet" type="text/css" href="../../assets/css/icons.css">
+<link rel="stylesheet" type="text/css" href="../../assets/css/stylesheet.css">
+</head>
+
+<body>
+    <div id="bg" class="main_container">
+        <div class="log_container">
+            <div class="content_box fl">
+                <div class="grid_logo_box">
+                    <div class="logo_text"><img src="../../assets/images/logo_text_pace.png" style="padding:4px 0;" /></div>
+                </div>
+                
+                <form>
+                    <div class="clearfix" >
+                        <p class="head_text">Login to your account</p>
+                        <div class="input_container"><input type="text" placeholder="Domain\UserName"><div class="icons__item icon_div" data-name="user"><i class="glyphicon glyphicon-user" style="top:3px; color:#006a4d;"></i></div></div>
+                        <div class="input_container"><input type="password" placeholder="Password"><div class="icons__item icon_div" data-name="user"><i style="padding-left: 4px; top:3px; color:#006a4d;" class="glyphicon glyphicon-lock"></i></div></div>
+                        <div style="margin-top: 15px; margin-left: 1px;font-family: futura_md_btmedium;color: #818a8f"><input type="checkbox" id="test1" /><label for="test1">Remember me</label></div>
+                        <input class="main_btn" type="submit" value="LOGIN" (click)="onLoggedIn()" >
+                        <div style="margin-top: 15px; margin-left: 1px;font-family: futura_md_btmedium;color: #818a8f"><a href="#">Forgot Your Password?</a></div>
+                    </div>
+                </form>
+                
+            </div>
+            <div class="footer_box fl">2018 CBRE, Inc. Version : 1.0.0.0</div>
+            
+        </div>
+    </div>
+   
+</body>
+</html>

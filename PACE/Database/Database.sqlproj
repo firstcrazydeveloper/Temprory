@@ -1,0 +1,150 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <Name>Database</Name>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectVersion>4.1</ProjectVersion>
+    <ProjectGuid>{e71b2f64-13bf-45aa-b2d8-0f9ad7a12f61}</ProjectGuid>
+    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql120DatabaseSchemaProvider</DSP>
+    <OutputType>Database</OutputType>
+    <RootPath>
+    </RootPath>
+    <RootNamespace>Databases</RootNamespace>
+    <AssemblyName>Databases</AssemblyName>
+    <ModelCollation>1033, CI</ModelCollation>
+    <DefaultFileStructure>BySchemaAndSchemaType</DefaultFileStructure>
+    <DeployToDatabase>True</DeployToDatabase>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
+    <TargetLanguage>CS</TargetLanguage>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <SqlServerVerification>False</SqlServerVerification>
+    <IncludeCompositeObjects>True</IncludeCompositeObjects>
+    <TargetDatabaseSet>True</TargetDatabaseSet>
+    <TargetDatabase>Database</TargetDatabase>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">11.0</VisualStudioVersion>
+    <!-- Default to the v11.0 targets path if the targets file for the current VS version is not found -->
+    <SSDTExists Condition="Exists('$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets')">True</SSDTExists>
+    <VisualStudioVersion Condition="'$(SSDTExists)' == ''">11.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Condition="'$(SQLDBExtensionsRefPath)' != ''" Project="$(SQLDBExtensionsRefPath)\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <ItemGroup>
+    <Folder Include="Properties" />
+    <Folder Include="Scripts" />
+    <Folder Include="dbo" />
+    <Folder Include="dbo\Tables" />
+    <Folder Include="Documentation" />
+    <Folder Include="Scripts\MasterData" />
+    <Folder Include="Scripts\Index" />
+    <Folder Include="Scripts\UserPermissions" />
+    <Folder Include="Scripts\PreScript" />
+    <Folder Include="Scripts\PostScript" />
+  </ItemGroup>
+  <ItemGroup>
+    <PostDeploy Include="Scripts\PostDeployment.sql" />
+    <PreDeploy Include="Scripts\PreDeployment.sql" />
+    <Build Include="dbo\Tables\Account.sql" />
+    <Build Include="dbo\Tables\AccountAddress.sql" />
+    <Build Include="dbo\Tables\AccountContact.sql" />
+    <Build Include="dbo\Tables\trefActionType.sql" />
+    <Build Include="dbo\Tables\Address.sql" />
+    <Build Include="dbo\Tables\Agent.sql" />
+    <Build Include="dbo\Tables\AgentAddress.sql" />
+    <Build Include="dbo\Tables\AgentContact.sql" />
+    <Build Include="dbo\Tables\AgentContactAddress.sql" />
+    <Build Include="dbo\Tables\Agreement.sql" />
+    <Build Include="dbo\Tables\AgreementAddress.sql" />
+    <Build Include="dbo\Tables\AgreementClause.sql" />
+    <Build Include="dbo\Tables\AgreementDocument.sql" />
+    <Build Include="dbo\Tables\AgreementStatus.sql" />
+    <Build Include="dbo\Tables\Clause.sql" />
+    <Build Include="dbo\Tables\Contact.sql" />
+    <Build Include="dbo\Tables\ContactAddress.sql" />
+    <Build Include="dbo\Tables\Document.sql" />
+    <Build Include="dbo\Tables\Role.sql" />
+    <Build Include="dbo\Tables\Suburb.sql" />
+    <Build Include="dbo\Tables\TagCondition.sql" />
+    <Build Include="dbo\Tables\Team.sql" />
+    <Build Include="dbo\Tables\TeamLiaison.sql" />
+    <Build Include="dbo\Tables\TeamTemplate.sql" />
+    <Build Include="dbo\Tables\Template.sql" />
+    <Build Include="dbo\Tables\TemplateClause.sql" />
+    <Build Include="dbo\Tables\TemplateDocument.sql" />
+    <Build Include="dbo\Tables\TemplateTag.sql" />
+    <Build Include="dbo\Tables\User.sql" />
+    <Build Include="dbo\Tables\UserApprover.sql" />
+    <Build Include="dbo\Tables\UserContact.sql" />
+    <Build Include="dbo\Tables\UserRole.sql" />
+    <Build Include="dbo\Tables\UserTeam.sql" />
+    <Build Include="dbo\Tables\trefTransactionType.sql" />
+    <Build Include="dbo\Tables\trefBusinessLineType.sql" />
+    <Build Include="dbo\Tables\trefAgencyType.sql" />
+    <Build Include="dbo\Tables\trefSoleOrJointAgencyType.sql" />
+    <Build Include="dbo\Tables\trefGstType.sql" />
+    <Build Include="dbo\Tables\trefDocumentType.sql" />
+    <Build Include="dbo\Tables\trefStateType.sql" />
+    <Build Include="dbo\Tables\trefAgreementStatusType.sql" />
+    <Build Include="dbo\Tables\trefPropertyType.sql" />
+    <Build Include="dbo\Tables\trefSubPropertyType.sql" />
+    <Build Include="dbo\Tables\trefStreetType.sql" />
+    <Build Include="dbo\Tables\trefEmployeeStatusType.sql" />
+    <Build Include="dbo\Tables\trefTemplateStatusType.sql" />
+    <Build Include="dbo\Tables\RoleAction.sql" />
+    <Build Include="dbo\Tables\Employee.sql" />
+    <Build Include="dbo\Tables\UserPersonalDetails.sql" />
+    <Build Include="dbo\Tables\trefCountryType.sql" />
+    <None Include="Scripts\MasterData\TrefActionType_tbl.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Documentation\Database Schema Data Types Convention v1.0.xlsx" />
+    <None Include="Scripts\Index\Index_ScrumSprint1.sql" />
+    <None Include="Scripts\UserPermissions\SqlBrokerPermissions.sql" />
+    <None Include="Scripts\PreScript\CheckIfBrokerEnabled.sql" />
+    <None Include="Deploy.ps1" />
+    <None Include="PACE.nuspec" />
+    <None Include="Scripts\MasterData\TrefBusinessLineType_tbl.sql" />
+    <None Include="Scripts\Index\Index_ScrumSprint2.sql" />
+    <None Include="PACE.publish.xml" />
+    <None Include="Scripts\MasterData\TrefStateType_tbl.sql" />
+    <None Include="Scripts\MasterData\TrefStreetType_tbl.sql" />
+    <None Include="Scripts\MasterData\TrefPropertyType_tbl.sql" />
+    <None Include="Scripts\MasterData\TrefSubPropertyType_tbl.sql" />
+    <None Include="Scripts\MasterData\TrefCountryType_tbl.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <RefactorLog Include="Database.refactorlog" />
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="dbo\Tables\trefFeatureType.sql" />
+    <Build Include="dbo\Tables\UserAddress.sql" />
+  </ItemGroup>
+</Project>

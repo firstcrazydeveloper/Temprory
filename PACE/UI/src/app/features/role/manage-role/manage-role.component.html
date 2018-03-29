@@ -1,0 +1,50 @@
+<app-nav-menu></app-nav-menu>
+<ng4-loading-spinner [threshold]="100000"></ng4-loading-spinner>
+<div class="container" style="padding: 15px">
+  <div class="pull-left" style="color: #818A8F; padding-top: 5px;">Total {{this.totalCount}} records </div>
+</div>
+
+<div class="container">
+  <div class="contentTable">
+    <table class=" ">
+      <thead>
+        <tr>
+          <!-- <th>Role Id</th> -->
+          <th>Role Name
+            <a href="javascript:void(0);" class="colSortBtn"></a>
+          </th>
+          <th>Usage
+            <a href="javascript:void(0);" class="colSortBtn"></a>
+          </th>
+          <th>Last Action Date
+            <a href="javascript:void(0);" class="colSortBtn"></a>
+          </th>
+          <th width="90">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let role of this.roleData">
+          <td>{{role.name}}</td>
+          <td>0</td>
+          <td>{{role.modified | date }}</td>
+          <td class="text-center">
+            <div class="rowNavIcon" (click)="displayToolTip($event);">
+              <a href="javascript:void(0);">&bull;&bull;&bull;</a>
+              <div class="rowNavBox">
+                <a (click)="showDetails(role.id);" class="editLink"> </a>
+                <a (click)="showDetails(role.id);" class="searchLink"> </a>
+                <!-- <div *ngIf='role.totalCount>0 else showDelete'></div>
+                    <ng-template #showDelete><a href="javascript:void(0);" class="deleteLink"> </a></ng-template> -->
+                <a (click)="deleteRole(role.id,role.name);" class="deleteLink"> </a>
+              </div>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+
+<app-pagination *ngIf="this.totalCount>25" (goPage)="this.goToPage($event)" (goNext)="onNext()" (goPrev)="onPrev()" [pagesToShow]="3" [page]="page" [perPage]="limit"
+  [count]="total"></app-pagination>
